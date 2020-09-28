@@ -6,3 +6,6 @@ VALUES ("Double Whopper");
 
 INSERT INTO burgers (burger_name) 
 VALUES ("Famous Star");
+
+INSERT INTO burgers (burger_name) 
+VALUES ("Veggie Burger");
