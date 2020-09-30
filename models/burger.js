@@ -13,6 +13,12 @@ var burger = {
         orm.insertOne("burgers", col, vals, function(res){
             callback(res)
         })
+    },
+
+    updateOne: function(col, val, condition, callback){
+        orm.updateOne("burgers", col, vals, function(res){
+            callback(res)
+        });
     }
 
 }
