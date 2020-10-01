@@ -15,11 +15,11 @@ var burger = {
         })
     },
 
-    // updateOne: function(col, vals, condition, callback){
-    //     orm.updateOne("burgers", col, vals, condition, function(res){
-    //         callback(res)
-    //     });
-    // }
+    updateOne: function(objColVals, condition, callback){
+        orm.updateOne("burgers", objColVals, condition, function(res){
+            callback(res)
+        });
+    }
 
 }
 

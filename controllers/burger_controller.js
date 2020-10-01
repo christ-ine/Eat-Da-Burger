@@ -11,7 +11,7 @@ router.get("/", function(req, res){
             burgers: data
         };
 
-        console.log(hbsObject);
+        // console.log(hbsObject);
         
 
         res.json(hbsObject);
@@ -25,6 +25,26 @@ router.post("/api/burgers", function(req,res){
         function(result){
         res.json({id: result.insertId})
     })
+})
+
+router.put("/api/burgers/:id", function (req, res){
+
+    var condition = "id = " + req.params.id;
+    // console.log("condition: " + condition);
+
+    burger.updateOne(
+        {devoured: req.body.devoured},
+    condition, function(result){
+        if (result.changedrows == 0){
+            return res.status(404).end();
+        } else {
+            // console.log("successfully devoured")
+            res.status(200).end();
+        }
+
+        
+    }
+    )
 })
 
 
