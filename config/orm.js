@@ -1,25 +1,47 @@
 // Import MySQL connection.
 var connection = require("../config/connection.js");
 
+function printQuestionMarks(num) {
+    var arr = [];
+
+    for (var i = 0; i < num; i++) {
+        arr.push("?");
+    }
+
+    return arr.toString();
+}
+
+
 var orm = {
 
-    selectAll: function(table, callback){
+    selectAll: function (table, callback) {
         var queryString = "SELECT * FROM " + table + ";";
-        connection.query(queryString, function(err, result){
+        connection.query(queryString, function (err, result) {
             if (err) throw err;
 
             callback(result)
         })
-    }
+    },
 
-    // insertOne: function(table, col, vals, callback){
-    //     var queryString = "INSERT INTO ?? (?) VALUES (?)"
-    //     connection.query(queryString, [table, col, vals], function(err, result){
-    //         if (err) throw err;
+    insertOne: function (table, cols, vals, callback) {
+        var queryString = "INSERT INTO " + table
 
-    //         callback(result)
-    //     })
-    // },
+        queryString += " (";
+        queryString += cols.toString();
+        queryString += ") ";
+        queryString += "VALUES (";
+        queryString += printQuestionMarks(vals.length);
+        queryString += ") ";
+
+        console.log(queryString);
+
+
+        connection.query(queryString, vals, function (err, result) {
+            if (err) throw err;
+
+            callback(result)
+        })
+    },
 
 
     // updateOne: function (table, col, val, condition, callback){
