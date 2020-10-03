@@ -16,7 +16,10 @@ var burger = {
     },
 
     updateOne: function(objColVals, condition, callback){
+        console.log("burger model works")
+        
         orm.updateOne("burgers", objColVals, condition, function(res){
+            
             callback(res)
         });
     }
