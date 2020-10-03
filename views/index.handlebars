@@ -6,7 +6,7 @@
     {{#each burgers}}
     {{#unless devoured}}
     <li>
-        {{burger_name}}
+        {{this.burger_name}}
 
         <button class="eat-burger" data-id="{{this.id}}" data-eaten="{{devoured}}">
             DEVOUR
@@ -23,7 +23,7 @@
     {{#each burgers}}
     {{#if devoured}}
     <li>
-        {{burger_name}}
+        {{this.burger_name}}
     </li>
     
     {{/if}}
