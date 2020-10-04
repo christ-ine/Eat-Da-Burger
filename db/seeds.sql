@@ -1,11 +1,11 @@
-INSERT INTO burgers (burger_name) 
-VALUES ("Big Mac");
+INSERT INTO burgers (burger_name, devoured) 
+VALUES ("Big Mac", false);
 
-INSERT INTO burgers (burger_name) 
-VALUES ("Double Whopper");
+INSERT INTO burgers (burger_name, devoured) 
+VALUES ("Double Whopper", false);
 
-INSERT INTO burgers (burger_name) 
-VALUES ("Famous Star");
+INSERT INTO burgers (burger_name, devoured) 
+VALUES ("Famous Star", false);
 
-INSERT INTO burgers (burger_name) 
-VALUES ("Veggie Burger");
+INSERT INTO burgers (burger_name, devoured) 
+VALUES ("Veggie Burger", false);

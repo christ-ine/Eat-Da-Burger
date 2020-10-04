@@ -1,0 +1,23 @@
+.burger-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.new-burger {
+    display: flex;
+    justify-content: center;
+    padding: 50px;
+}
+
+.add-header {
+    display: flex;
+    justify-content: center;
+    /* padding: 10px; */
+}

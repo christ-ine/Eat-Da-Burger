@@ -27,10 +27,10 @@ $(function () {
         var id = $(this).data("id");
 
         var newEatState = {
-            devoured: 1
+            devoured: true
         };
 
-        $.ajax("/api/burgers/" +id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newEatState
         }).then(function(){
